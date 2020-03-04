@@ -35,8 +35,6 @@ column1 = dbc.Col(
 pipeline_isgalaxyrf = load('assets/isgalaxyrf.joblib')
 
 import pandas as pd
-import plotly.graph_objects as go
-import plotly.express as px
 
 df = pd.read_csv('https://github.com/arewelearningyet/dashtemplate/blob/master/assets/Skyserver_12_30_2019%204_49_58%20PM.csv?raw=true')
 df_alpha = df.copy() # creating backup copy
@@ -51,14 +49,9 @@ qnaive = [('{0:.2f}%'.format(df.galaxy.value_counts(normalize=True)[0]*100)),
           ('{0:.2f}%'.format(df.star.value_counts(normalize=True)[0]*100)),
           ('{0:.2f}%'.format(df.quasar.value_counts(normalize=True)[0]*100))]
 class_distribution['naivebaseline'] = qnaive
-class_distribution['class'] = pd.Series(
-    ['{0:.2f}%'.format(
-        val*100) for val in class_distribution[
-                                               'class']], index=
-                                                class_distribution.index)
-
+class_distribution['class'] = pd.Series(['{0:.2f}%'.format(val*100) for val in class_distribution['class']], index=class_distribution.index)
+print(class_distribution)
 colors = ['gold', 'mediumturquoise', 'darkorange', 'lightgreen']
-
 fig = px.pie(class_distribution, values='class', names='index',
              title='Sky Object Classification Distribution',
              hover_data=['naivebaseline'], labels={'index':'object',

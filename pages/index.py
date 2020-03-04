@@ -13,20 +13,20 @@ from app import app
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 column1 = dbc.Col(
     [
+        html.Img(src='assets/sdsslogowhite.png', className='img-fluid'),
         dcc.Markdown(
             """
-        
-            ## Your Value Proposition
+            #### Sloan Digital Sky Survey
+            
+            ## So... what are we looking at?
 
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
+            A starry night is more than it seems.
 
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
-
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
-
+            How can we identify one tiny dot within the vastness of space?
+            
             """
         ),
-        dcc.Link(dbc.Button('Your Call To Action', color='primary'), href='/predictions')
+        dcc.Link(dbc.Button('What is it?', color='primary'), href='/predictions')
     ],
     md=4,
 )

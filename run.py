@@ -55,8 +55,8 @@ footer = dbc.Container(
 # dbc.Container: https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False), 
-    navbar, 
-    dbc.Container(id='page-content', className='mt-4'), 
+    navbar,
+    dbc.Container(id='page-content', className='mt-4'),
     html.Hr(), 
     footer
 ])

@@ -15,13 +15,20 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Insights
-
+            ## Ey
 
             """
         ),
-
+        html.Hr(),
+        dcc.Markdown(
+            """
+            ## 
+            ### Q?
+            A: 
+            """
+        )
     ],
+    md=12,
 )
 
 layout = dbc.Row([column1])

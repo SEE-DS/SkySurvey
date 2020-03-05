@@ -18,6 +18,7 @@ scikit-learn = "==0.22.1"
 pdpbox = "*"
 shap = "*"
 eli5 = "*"
+xgboost = "==0.90"
 
 [requires]
 python_version = "3"

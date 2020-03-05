@@ -6,6 +6,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.express as px
 from joblib import load
+import pandas as pd
 
 # Imports from this application
 from app import app
@@ -29,15 +30,12 @@ column1 = dbc.Col(
         ),
         dcc.Link(dbc.Button('What is it?', color='primary'), href='/predictions')
     ],
-    md=4,
+    md=2,
 )
-
-pipeline_isgalaxyrf = load('assets/isgalaxyrf.joblib')
-
-import pandas as pd
-
+ 
 df = pd.read_csv('https://github.com/arewelearningyet/dashtemplate/blob/master/assets/Skyserver_12_30_2019%204_49_58%20PM.csv?raw=true')
 df_alpha = df.copy() # creating backup copy
+"""
 df = df.drop(columns='specobjid')
 df['galaxy']=df['class']=='GALAXY'
 df['star'] = df['class']=='STAR'
@@ -58,6 +56,21 @@ fig = px.pie(class_distribution, values='class', names='index',
                                                    'naivebaseline':'naive class baseline'})
 fig.update_traces(hoverinfo='value', textinfo='label+percent', textfont_size=20,
                   marker=dict(colors=colors, line=dict(color='#000000', width=2,)))
+ """
+
+fig = px.scatter_3d(df_alpha, 
+                    x='ra', 
+                    y='dec', 
+                    z='redshift', 
+                    color='redshift',
+                    hover_data=['class'],
+                    symbol='class')
+# fig.update_traces(
+# #mode = 'markers',
+#                     marker = dict(
+#                         symbol = 'diamond',
+#         ))
+# #fig.update_layout(scene_zaxis_type="log")
 
 column2 = dbc.Col(
     [

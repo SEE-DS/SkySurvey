@@ -13,7 +13,7 @@ from app import app
 
 # 2 column layout. 1st column width = 4/12
 # https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
-df = pd.read_csv('/assets/Skyserver_12_30_2019 4_49_58 PM.csv')
+df = pd.read_csv('assets/Skyserver_12_30_2019 4_49_58 PM.csv')
 
 ra = sorted(df['ra'].unique())
 dec = sorted(df['dec'].unique())
@@ -27,52 +27,31 @@ column1 = dbc.Col([
             ## **Make a Prediction**
             """
         ),
-        
-
         html.Div([
 			dcc.Markdown("###### Select ra"),
 			dcc.Slider(
-				id='brand-dd', 
-				options=[
-					{'label': i, 'value': i} for i in ra],
+				id='ra-input', 
 				value=''
 			)
 		]),
 		html.Div([
 			dcc.Markdown("###### Select dec"),
 			dcc.Dropdown(
-				id='model-dd', 
-				options=[
-					{'label': i, 'value': i} for i in dec],
+				id='dec-input', 
 				value=''
 			)
 		]),
 		html.Div([
 			dcc.Markdown("###### Select redshift"),
 			dcc.Dropdown(
-				id='color-dd', 
-				options=[
-					{'label': i, 'value': i} for i in redshift],
+				id='redshift-input', 
 				value=''
 			)
 		])
 	],
 	md=3
 )
-
 column2 = dbc.Col([
-				    dcc.Markdown(
-				" " +
-				"" +
-				" " +
-				""
-			)
-		]),
-													   
-	],
-	md=3
-)
-column3 = dbc.Col([
 		#dcc.Markdown("##### Set Approximate Year"),
 		#dcc.Slider(
 		#	id='year-slide',
@@ -95,10 +74,9 @@ column3 = dbc.Col([
 	 Output('shap-plot', 'figure')],
 	[Input('ra-input', 'value'),
 	 Input('dec-input', 'value'),
-	 Input('redshift-input', 'value')
-def predict_and_plot(
-    ra, dec, redshift
-):
+	 Input('redshift-input', 'value')])
+
+def predict_and_plot(ra, dec, redshift):
 	# Create prediction
 	pred_df = pd.DataFrame(
 		columns=['ra', 'dec', 'redshift'],
@@ -112,10 +90,8 @@ def predict_and_plot(
 	pred_out = f"Current Value: ${y_pred:,.2f}"
 	
 	# Derive shap values from user input
-	encoder = pipeline.named_steps['ordinalencoder']
-	model = pipeline.named_steps['xgbregressor']
-	pred_df_encoded = encoder.transform(pred_df)
-	explainer = load('model/explainer.joblib')
+	model = pipeline.named_steps['xgbclassifier']
+	explainer = load('model/explainer.joblib') #this part
 	shap_vals = explainer.shap_values(pred_df_encoded)
 	input_names = [i for i in pred_df.iloc[0]]
 	
@@ -151,4 +127,4 @@ def predict_and_plot(
 	
 	return pred_out, shap_plot
 
-layout = dbc.Row([column1, column2, column3])
+layout = dbc.Row([column1, column2])

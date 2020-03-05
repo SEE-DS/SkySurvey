@@ -34,12 +34,10 @@ column1 = dbc.Col(
 )
 
 df = pd.read_csv('https://github.com/arewelearningyet/dashtemplate/blob/master/assets/Skyserver_12_30_2019%204_49_58%20PM.csv?raw=true')
-df['markersize']=.5
-"""
-df = df.drop(columns='specobjid')
 df['galaxy']=df['class']=='GALAXY'
 df['star'] = df['class']=='STAR'
 df['quasar'] = df['class']=='QSO'
+"""
 df=df.drop(columns='class')
 
 class_distribution = df_alpha['class'].value_counts(normalize=True).reset_index()
@@ -65,19 +63,92 @@ fig = (px.scatter_3d(df,
                     color='redshift',
                     hover_data=['class'],
                     symbol='class',
-                    opacity=.65,
-                    size='markersize',
+                    opacity=.9,
                     symbol_sequence=['square-open', 'circle', 'x'],
                     width=825,
-                    height=800))
+                    height=850))
 fig.update_traces(marker=dict(size=3,
-                              line=dict(width=0,
-                                        color='DarkSlateGrey')),
-                  selector=dict(mode='markers'))
-fig.update_xaxes(showgrid=False)
-fig.update_yaxes(showgrid=False)
+                              line=dict(width=0)),
+                  selector=dict(mode='markers'),
+                  showlegend=True)
+
+img_width=1600
+img_height=1200
+
+fig.update_xaxes(showgrid=False,
+        visible=False,
+        range=[0, img_height],
+        scaleanchor='x'
+        )
+fig.update_yaxes(showgrid=False,
+        visible=False,
+        range=[0, img_height],
+        scaleanchor='x'
+        )
 fig.update_layout(title_text="",
-                  title_font_size=30)
+                  title_font_size=30,
+                  legend=dict(
+                      bgcolor='yellow',
+                      bordercolor='black',
+                      itemsizing='constant',
+                      itemclick='toggleothers',
+                      borderwidth=3,
+                      x=.4, 
+                      y=0,
+                      font=dict(
+                          color='black',
+                          size=14
+                          )
+                      ),
+                  coloraxis=dict(
+                      colorbar=dict(
+                          tickcolor='yellow',
+                          tickfont=dict(
+                              color='yellow'),
+                          title=dict(
+                              font=dict(
+                                  color='yellow')
+                              )
+                          )
+                      ),
+                  paper_bgcolor='rgba(0,0,0,0)',
+                  plot_bgcolor='rgba(0,0,0,0)',
+                  scene=dict(
+                      bgcolor='rgba(0,0,0,0)',
+                      xaxis=dict(
+                          visible=False,
+                          showbackground=False,
+                          color='yellow'),
+                      yaxis=dict(
+                          visible=False,
+                          showbackground=False,
+                          color='yellow'),
+                      zaxis=dict(
+                          visible=False,
+                          showbackground=False,
+                          linecolor='yellow',
+                          tickcolor='yellow',
+                          title=dict(
+                              font=dict(
+                                  color='yellow')
+                              )
+                          )
+                      )
+                  )
+fig.add_layout_image(
+        dict(
+            source='https://raw.githubusercontent.com/arewelearningyet/dashtemplate/master/assets/fieldvoorwerp-big.jpg',
+            x=0,
+            sizex=img_width,
+            y=img_height,
+            sizey=img_height,
+            xref='x',
+            yref='y',
+            opacity=1.0,
+            layer='below',
+            sizing='stretch',
+            )
+        )
 
 # fig.update_traces(
 # #mode = 'markers',

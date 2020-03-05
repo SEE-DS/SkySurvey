@@ -33,7 +33,7 @@ column1 = dbc.Col(
     md=3
 )
 
-df = pd.read_csv('https://github.com/arewelearningyet/dashtemplate/blob/master/assets/Skyserver_12_30_2019%204_49_58%20PM.csv?raw=true')
+df = pd.read_csv('assets/Skyserver_12_30_2019 4_49_58 PM.csv')
 df['galaxy']=df['class']=='GALAXY'
 df['star'] = df['class']=='STAR'
 df['quasar'] = df['class']=='QSO'
@@ -63,11 +63,10 @@ fig = (px.scatter_3d(df,
                     color='redshift',
                     hover_data=['class'],
                     symbol='class',
-                    opacity=.9,
-                    symbol_sequence=['square-open', 'circle', 'x'],
+                    symbol_sequence=['square', 'circle', 'x'],
                     width=825,
-                    height=850))
-fig.update_traces(marker=dict(size=3,
+                    height=900))
+fig.update_traces(marker=dict(size=5,
                               line=dict(width=0)),
                   selector=dict(mode='markers'),
                   showlegend=True)

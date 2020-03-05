@@ -67,9 +67,9 @@ fig = (px.scatter_3d(df,
                     symbol='class',
                     opacity=.65,
                     size='markersize',
-                    symbol_sequence=['square-open', 'x', 'circle'],
-                    width=700,
-                    height=700))
+                    symbol_sequence=['square-open', 'circle', 'x'],
+                    width=825,
+                    height=800))
 fig.update_traces(marker=dict(size=3,
                               line=dict(width=0,
                                         color='DarkSlateGrey')),

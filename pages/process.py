@@ -26,7 +26,7 @@ column1 = dbc.Col(
             """
         )
     ],
-    md=12
+    md=2
 )
 column2 = dbc.Col(
     [
@@ -106,7 +106,7 @@ column2 = dbc.Col(
             """
         )
     ],
-    md=3
+    md=4
 )
 
 layout = dbc.Row([column1, column2])

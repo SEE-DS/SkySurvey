@@ -26,9 +26,11 @@ column1 = dbc.Col(
 
             How can we identify one tiny dot within the vastness of space?
             
+            ### The Graph
+            
             Shown here are radiant space objects, representing three types.
             
-            The color and the z-axis represent each objects' [**__redshift__**](https://en.wikipedia.org/wiki/Redshift#Observations_in_astronomy).
+            The __color and the z-axis__ represent each objects' [**__redshift__**](https://en.wikipedia.org/wiki/Redshift#Observations_in_astronomy).
             
             """
         ),
@@ -36,7 +38,7 @@ column1 = dbc.Col(
            
         dcc.Markdown(
             """
-            the x and y planes represent astronomical coordinates [**right ascension**](https://en.wikipedia.org/wiki/Right_ascension) and [**declination**](https://en.wikipedia.org/wiki/Declination), respectively. 
+            The __x and y planes__ represent astronomical coordinates [**right ascension**](https://en.wikipedia.org/wiki/Right_ascension) and [**declination**](https://en.wikipedia.org/wiki/Declination), respectively. 
             
             
             [(see animation for a visual explanation)](https://en.wikipedia.org/wiki/Equatorial_coordinate_system)
@@ -161,7 +163,8 @@ scatter.add_layout_image(
 
 column2 = dbc.Col(
     [
-        dcc.Graph(figure=scatter),         
+        dcc.Graph(figure=scatter),
+        dcc.Markdown("""(you can toggle the legend items to view one class at a time, but the color representation will shift to reflect the spread of redshift within that class alone)""")
     ],
     md=7
 )

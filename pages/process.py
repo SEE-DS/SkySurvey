@@ -85,6 +85,7 @@ pie.update_traces(hoverinfo='value', textinfo='label+percent', textfont_size=20,
 
 column2 = dbc.Col(
     [
+        dcc.Graph(figure=pie),
         dcc.Markdown(
             """
                         
@@ -92,8 +93,7 @@ column2 = dbc.Col(
             Accuracy is an appropriate metric in evaluating the performance of a model built to classify these objects, as a large part of the motivation for this modeling is to explore the information it can reveal about the definitions and discovery of such objects.
 
             """
-        ),
-        dcc.Graph(figure=pie),
+        )
     ]
 )
 

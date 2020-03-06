@@ -30,6 +30,7 @@ column1 = dbc.Col(
 )
 column2 = dbc.Col(
     [
+        html.Hr(),       
         dcc.Markdown(
             """
             ## The Target
@@ -104,7 +105,8 @@ column2 = dbc.Col(
 
             """
         )
-    ]
+    ],
+    md=3
 )
 
 layout = dbc.Row([column1, column2])

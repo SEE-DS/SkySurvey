@@ -30,7 +30,7 @@ column1 = dbc.Col(
             
             Shown here are radiant space objects, representing three types.
             
-            __The most telling part of this graph is how difficult it is to find and differentiate galaxies from stars and quasars.__
+            #### __The most telling part of this graph is how difficult it is to find and differentiate galaxies from stars and quasars.__
             
             The __color and the z-axis__ represent each objects' [**__redshift__**](https://en.wikipedia.org/wiki/Redshift#Observations_in_astronomy).
             
@@ -117,7 +117,7 @@ scatter.update_layout(title_text="",
                         center=dict(
                             z=-.20,
                             y=.05,
-                            x=.5
+                            x=.1
                         ),
                         eye=dict(
                             z=-0.5

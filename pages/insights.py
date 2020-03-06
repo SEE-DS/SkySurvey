@@ -17,13 +17,29 @@ column1 = dbc.Col(
         
             ## But what about the modeling???
             
-            The efforts to effectively classify these objects may not be groundbreaking science, but they can be valuable and informative. In my estimation, going through the process to differentiate these objects from one another with the available photometric data available is a great way to reverse-engineer the procedures undertaken that resulted in the discovery, defining, and study of quasi-stellar objects. When combined with an appreciation that our ability to capture higher redshift has grown over time, it paints a picture of the gradual uncovering of phenomena that are still not widely understood and appreciated. 
-                
-            Based on all the feature-importance evidence between classes and individual predictions, redshift is far and away the most predictive feature of any given observation. 
+            The efforts to effectively classify these objects may not be groundbreaking science, but they can be valuable and informative. 
+            In my estimation, going through the process to differentiate these objects from one another with the available photometric data available is a great way to reverse-engineer the procedures undertaken that resulted in the discovery, defining, and study of quasi-stellar objects. 
+            When combined with an appreciation that our ability to capture higher redshift has grown over time, it paints a picture of the gradual uncovering of phenomena that are still not widely understood and appreciated. 
             """),
+    ],
+    md=2
+)
+column2 = dbc.Col(
+    [
+        dcc.Markdown(
+            """
+            Based on all the feature-importance evidence between classes and individual predictions, redshift is far and away the most predictive feature of any given observation. 
+            """
+        ),
         html.Img(src='assets/galaxy true.png', className='img-fluid'),
         html.Img(src='assets/star true.png', className='img-fluid'),
-        html.Img(src='assets/quasar true.png', className='img-fluid'),   
+        html.Img(src='assets/quasar true.png', className='img-fluid'),
+    ],
+    md=8
+)
+column3 = dbc.Col(
+    
+    [
         dcc.Markdown(
             """ 
             ### No seriously, your grade depends on modeling and evaluation.
@@ -43,4 +59,4 @@ column1 = dbc.Col(
     ],
 )
 
-layout = dbc.Row([column1])
+layout = dbc.Row([column1, column2, column3])

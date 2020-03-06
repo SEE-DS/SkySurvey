@@ -18,7 +18,7 @@ column1 = dbc.Col(
         html.Img(src='assets/sdsslogowhite.png', className='img-fluid'),
         dcc.Markdown(
             """
-            #### Sloan Digital Sky Survey
+            #### Sloan Digital Sky Survey 
             
             ## So... what are we looking at?
 

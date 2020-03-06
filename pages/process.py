@@ -76,7 +76,8 @@ pie = px.pie(data_frame=class_distribution, values='class', names='index',
              title='Sky Object Classification Distribution',
              hover_data=['naivebaseline'], 
              labels={'index':'object',
-                     'naivebaseline':'naive class baseline'},
+                     'naivebaseline':'naive class baseline',
+                     'class':'normalized class frequency'},
              width=500
 )
 pie.update_traces(hoverinfo='value', textinfo='label+percent', textfont_size=20,

@@ -29,8 +29,7 @@ column1 = dbc.Col(
     md=2
 )
 column2 = dbc.Col(
-    [
-        html.Hr(),       
+    [    
         dcc.Markdown(
             """
             ## The Target
@@ -47,14 +46,6 @@ column2 = dbc.Col(
                The pie chart shown here displays the proportion of each class, as well as displaying the naive majority baseline upon hovering over the chart sections. (A 'naive majority baseline' accuracy is a measure of how accurate we would be if we guessed that every object belonged only to the class in question.) 
                  
                The rarer class (quasars) is easiest to differentiate, while the most common (galaxies) is the most difficult.             
-            """
-        ),
-        html.Hr(),
-        dcc.Markdown(
-            """
-            ## 
-            ### 
-            
             """
         )
     ],
@@ -89,7 +80,7 @@ pie.update_traces(hoverinfo='value', textinfo='label+percent', textfont_size=20,
 
 
 
-column2 = dbc.Col(
+column3 = dbc.Col(
     [
         dcc.Markdown("""
             ( [The Sloan Digital Sky Survey or SDSS is a major multi-spectral imaging and spectroscopic redshift survey using a dedicated 2.5-m wide-angle optical telescope at Apache Point Observatory in New Mexico, United States. -Wikipedia](https://en.wikipedia.org/wiki/Sloan_Digital_Sky_Survey) )

@@ -138,7 +138,13 @@ scatter.add_layout_image(
 
 column2 = dbc.Col(
     [
-        dcc.Graph(figure=scatter)
+        dcc.Graph(figure=scatter),
+        html.Img(src='Ra_and_dec_demo_animation_small.gif', className='img-fluid'),        
+        dcc.Markdown(
+            """
+            the x and y planes represent astronomical coordinates right ascension and declination, respectively. 
+            """
+        )
     ]
 )
 

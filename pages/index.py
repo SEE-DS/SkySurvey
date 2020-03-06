@@ -34,27 +34,6 @@ column1 = dbc.Col(
 )
 
 df = pd.read_csv('assets/Skyserver_12_30_2019 4_49_58 PM.csv')
-df_alpha = df.copy()
-df['galaxy']=df['class']=='GALAXY'
-df['star'] = df['class']=='STAR'
-df['quasar'] = df['class']=='QSO'
-
-class_distribution = df_alpha['class'].value_counts(normalize=True).reset_index()
-qnaive = [('{0:.2f}%'.format(df.galaxy.value_counts(normalize=True)[0]*100)),
-          ('{0:.2f}%'.format(df.star.value_counts(normalize=True)[0]*100)),
-          ('{0:.2f}%'.format(df.quasar.value_counts(normalize=True)[0]*100))]
-class_distribution['naivebaseline'] = qnaive
-class_distribution['string'] = pd.Series(['{0:.2f}%'.format(val*100) for val in class_distribution['class']], index=class_distribution.index)
-colors = ['gold', 'mediumturquoise', 'darkorange', 'lightgreen']
-pie = px.pie(data_frame=class_distribution, values='class', names='index',
-             title='Sky Object Classification Distribution',
-             hover_data=['naivebaseline'], 
-             labels={'index':'object',
-                     'naivebaseline':'naive class baseline'},
-             width=500
-)
-pie.update_traces(hoverinfo='value', textinfo='label+percent', textfont_size=20,
-                  marker=dict(colors=colors, line=dict(color='#000000', width=2)))
 
 scatter = (px.scatter_3d(df, 
                     x='ra', 
@@ -159,8 +138,7 @@ scatter.add_layout_image(
 
 column2 = dbc.Col(
     [
-        dcc.Graph(figure=pie),
-        dcc.Graph(figure=scatter),
+        dcc.Graph(figure=scatter)
     ]
 )
 

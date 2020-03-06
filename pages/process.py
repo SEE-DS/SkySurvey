@@ -19,7 +19,7 @@ column1 = dbc.Col(
         
             ## The Data
             
-            ### Sloan Digital Sky Survey - 10,000 observation set 
+            #### Sloan Digital Sky Survey - 10,000 observation set 
             
                Originally published by the Sloan Digital Sky Survey, this dataset contains observations of objects in space. 
                  
@@ -37,7 +37,7 @@ column2 = dbc.Col(
             """
             ## The Target
                
-            ### "Is object a galaxy?"
+            #### "Is object a galaxy?"
                
                Of the available features of these observations, one is a clear target for classification:
             an object is defined to be a star, a galaxy, or a quasar (also known as a "quasi-stellar object").
@@ -47,7 +47,9 @@ column2 = dbc.Col(
                I was initially interested in classifying quasars, as they are dynamic and less-understood phenomena, but found the difficulty in classifying/differentiating galaxies from both stars and quasars to be an interesting challenge as well.
                  
                This difficulty gave me a clearer picture of the nature of classification, especially in terms of multi-class classification in the case of imbalanced classes.
-                 
+               
+               ****
+               
                #### __The pie chart shown here displays the proportion of each class, as well as displaying the naive majority baseline upon hovering over the chart sections. (A 'naive majority baseline' accuracy is a measure of how accurate we would be if we guessed that every object belonged only to the class in question.)__            
             """
         )

@@ -107,12 +107,11 @@ scatter.update_layout(title_text="",
                   paper_bgcolor='rgba(0,0,0,0)',
                   plot_bgcolor='rgba(0,0,0,0)',
                   scene=dict(
+                      dragmode='turntable',
                       bgcolor='rgba(0,0,0,0)',
                       camera=dict(
                         center=dict(
-                            x=-1,
-                            y=-1,
-                            z=0
+                            y=-2
                         ),
                         eye=dict(
                             z=-1

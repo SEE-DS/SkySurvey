@@ -151,7 +151,8 @@ scatter.add_layout_image(
 column2 = dbc.Col(
     [
         dcc.Graph(figure=scatter),         
-    ]
+    ],
+    md=8
 )
 
 layout = dbc.Row([column1, column2])

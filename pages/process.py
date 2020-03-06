@@ -18,29 +18,29 @@ column1 = dbc.Col(
             """
         
             ## The Data
-                 Originally published by the Sloan Digital Sky Survey, this dataset contains observations of objects in space. 
+               Originally published by the Sloan Digital Sky Survey, this dataset contains observations of objects in space. 
                  
-                 There are 10,000 observations in the dataset used in this exploration. [see github for specific contents]
+               There are 10,000 observations in the dataset used in this exploration.
                  
-                 Most of the features are photometric information, mostly broken up or 'binned' into wavelengths of light or radiation.
+               Most of the features are photometric information, mostly broken up or 'binned' into wavelengths of light or radiation.
             
             
             ( [The Sloan Digital Sky Survey or SDSS is a major multi-spectral imaging and spectroscopic redshift survey using a dedicated 2.5-m wide-angle optical telescope at Apache Point Observatory in New Mexico, United States. -Wikipedia](https://en.wikipedia.org/wiki/Sloan_Digital_Sky_Survey) )
             
             ## The Target
                  
-                 Of the available features of these observations, one is a clear target for classification:
+               Of the available features of these observations, one is a clear target for classification:
             an object is defined to be a star, a galaxy, or a quasar (also known as a "quasi-stellar object").
                  
-                 Rather than explore this as a multi-class classification problem, in modeling I deconstructed this feature into binary classification for each type of object.
+               Rather than explore this as a multi-class classification problem, in modeling I deconstructed this feature into binary classification for each type of object.
                  
-                 I was initially interested in classifying quasars, as they are dynamic and less-understood phenomena, but found the difficulty in classifying/differentiating galaxies from both stars and quasars to be an interesting challenge as well.
+               I was initially interested in classifying quasars, as they are dynamic and less-understood phenomena, but found the difficulty in classifying/differentiating galaxies from both stars and quasars to be an interesting challenge as well.
                  
-                 This difficulty gave me a clearer picture of the nature of classification, especially in terms of multi-class classification in the case of imbalanced classes.
+               This difficulty gave me a clearer picture of the nature of classification, especially in terms of multi-class classification in the case of imbalanced classes.
                  
-                 The pie chart shown here displays the proportion of each class, as well as displaying the naive majority baseline upon hovering over the chart sections. (A 'naive majority baseline' accuracy is a measure of how accurate we would be if we guessed that every object belonged only to the class in question.) 
+               The pie chart shown here displays the proportion of each class, as well as displaying the naive majority baseline upon hovering over the chart sections. (A 'naive majority baseline' accuracy is a measure of how accurate we would be if we guessed that every object belonged only to the class in question.) 
                  
-                 The rarer class (quasars) is easiest to differentiate, while the most common (galaxies) is the most difficult.
+               The rarer class (quasars) is easiest to differentiate, while the most common (galaxies) is the most difficult.
             
             ## The Metric
             Accuracy is an appropriate metric in evaluating the performance of a model built to classify these objects, as a large part of the motivation for this modeling is to explore the information it can reveal about the definitions and discovery of such objects.

@@ -100,4 +100,4 @@ column3 = dbc.Col(
     md=4
 )
 
-layout = dbc.Row([column1, column2])
+layout = dbc.Row([column1, column2, column3])

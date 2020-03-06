@@ -23,6 +23,7 @@ column1 = dbc.Col(
             
             When combined with an appreciation that our ability to capture higher redshift has grown over time, it paints a picture of the gradual uncovering of phenomena that are still not widely understood and appreciated. 
             """),
+         html.Img(src='assets/galaxy ugriz v redshift.png'),       
     ],
     md=3
 )
@@ -42,9 +43,8 @@ column2 = dbc.Col(
             ## Further Exploration!
             With such a clear distinction between these classes, I would be interested to explore the task of differentiating between the tougher cases, and could imagine subsetting the data to classify only those cases that are more ambiguous, in order to bring more to light the other factors that enter into the differentiation between stars, galaxies, and quasi-stellar objects (who often are surrounded by galaxies that are hard to make out against the glare of QSOs)
             """),
-        html.Img(src='assets/galaxy xgb eli5 permutation importance.png'),
         html.Img(src='assets/galaxy confusion matrix.png'),
-        html.Img(src='assets/galaxy ugriz v redshift'),
+        html.Img(src='assets/galaxy xgb eli5 permutation importance.png'),
     ],
     md=6
 )

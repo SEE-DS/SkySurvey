@@ -29,6 +29,8 @@ column2 = dbc.Col(
         dcc.Markdown(
             """
             Based on all the feature-importance evidence between classes and individual predictions, redshift is far and away the most predictive feature of any given observation. 
+            
+            The Shapley value force plot for the prediction that the object observed below is a galaxy shows that other factors may come into play as well, demonstrating that estimating the significance of a feature in terms of an entire dataset (the importance of redshift) doesn't necessarily reflect the weight of it's impact on individual predictions. 
             """
         ),
         html.Img(src='assets/galaxy true.png', className='img-fluid'),

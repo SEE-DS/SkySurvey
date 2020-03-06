@@ -26,7 +26,7 @@ column1 = dbc.Col(
             """
         )
     ],
-    md=2
+    md=12
 )
 column2 = dbc.Col(
     [    

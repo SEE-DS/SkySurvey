@@ -40,11 +40,7 @@ column1 = dbc.Col(
                  
                The pie chart shown here displays the proportion of each class, as well as displaying the naive majority baseline upon hovering over the chart sections. (A 'naive majority baseline' accuracy is a measure of how accurate we would be if we guessed that every object belonged only to the class in question.) 
                  
-               The rarer class (quasars) is easiest to differentiate, while the most common (galaxies) is the most difficult.
-            
-            ## The Metric
-            Accuracy is an appropriate metric in evaluating the performance of a model built to classify these objects, as a large part of the motivation for this modeling is to explore the information it can reveal about the definitions and discovery of such objects.
-             
+               The rarer class (quasars) is easiest to differentiate, while the most common (galaxies) is the most difficult.             
             """
         ),
         html.Hr(),
@@ -89,6 +85,14 @@ pie.update_traces(hoverinfo='value', textinfo='label+percent', textfont_size=20,
 
 column2 = dbc.Col(
     [
+        dcc.Markdown(
+            """
+                        
+            ## The Metric
+            Accuracy is an appropriate metric in evaluating the performance of a model built to classify these objects, as a large part of the motivation for this modeling is to explore the information it can reveal about the definitions and discovery of such objects.
+
+            """
+        ),
         dcc.Graph(figure=pie),
     ]
 )

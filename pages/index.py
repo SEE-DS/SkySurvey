@@ -36,10 +36,10 @@ column1 = dbc.Col(
            
         dcc.Markdown(
             """
-            the x and y planes represent astronomical coordinates right ascension and declination, respectively. 
+            the x and y planes represent astronomical coordinates [**right ascension**](https://en.wikipedia.org/wiki/Right_ascension) and [**declination**](https://en.wikipedia.org/wiki/Declination), respectively. 
             
             
-            (see animation for a visual explanation)
+            [(see animation for a visual explanation)](https://en.wikipedia.org/wiki/Equatorial_coordinate_system)
             """
         ),
         html.Img(src='assets/Ra_and_dec_demo_animation_small.gif', className='img-fluid')       

@@ -18,6 +18,9 @@ column1 = dbc.Col(
             """
         
             ## The Data
+            
+            ### Sloan Digital Sky Survey - 10,000 observation set 
+            
                Originally published by the Sloan Digital Sky Survey, this dataset contains observations of objects in space. 
                  
                There are 10,000 observations in the dataset used in this exploration.
@@ -33,7 +36,9 @@ column2 = dbc.Col(
         dcc.Markdown(
             """
             ## The Target
-                 
+               
+            ### "Is object a galaxy?"
+               
                Of the available features of these observations, one is a clear target for classification:
             an object is defined to be a star, a galaxy, or a quasar (also known as a "quasi-stellar object").
                  
@@ -90,6 +95,9 @@ column3 = dbc.Col(
             """
                         
             ## The Metric
+            
+            ### Accuracy
+            
             Accuracy is an appropriate metric in evaluating the performance of a model built to classify these objects, as a large part of the motivation for this modeling is to explore the information it can reveal about the definitions and discovery of such objects.
 
             """

@@ -44,7 +44,7 @@ column1 = dbc.Col(
         ),
         html.Img(src='assets/Ra_and_dec_demo_animation_small.gif', className='img-fluid')       
     ],
-    md=4.5
+    md=5
 )
 
 df = pd.read_csv('assets/Skyserver_12_30_2019 4_49_58 PM.csv')
@@ -57,7 +57,7 @@ scatter = (px.scatter_3d(df,
                     hover_data=['class'],
                     symbol='class',
                     symbol_sequence=['square', 'circle', 'x'],
-                    width=825,
+                    width=800,
                     height=900))
 
 scatter.update_traces(marker=dict(size=5,
@@ -154,7 +154,7 @@ column2 = dbc.Col(
     [
         dcc.Graph(figure=scatter),         
     ],
-    md=7.5
+    md=7
 )
 
 layout = dbc.Row([column1, column2])

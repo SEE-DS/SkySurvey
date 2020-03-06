@@ -38,6 +38,10 @@ column2 = dbc.Col(
         html.Img(src='assets/galaxy true.png', className='img-fluid'),
         html.Img(src='assets/star true.png', className='img-fluid'),
         html.Img(src='assets/quasar true.png', className='img-fluid'),
+        dcc.Markdown("""
+            ## Further Exploration!
+            With such a clear distinction between these classes, I would be interested to explore the task of differentiating between the tougher cases, and could imagine subsetting the data to classify only those cases that are more ambiguous, in order to bring more to light the other factors that enter into the differentiation between stars, galaxies, and quasi-stellar objects (who often are surrounded by galaxies that are hard to make out against the glare of QSOs)
+            """),
     ],
     md=6
 )
@@ -56,7 +60,7 @@ column3 = dbc.Col(
             
               Using a simple logistic regression, classification accuracy for predicting galaxies was 90.76% accurate against the validation subset. 
             
-              By applying an ensemble method and harnessing the power of it's distribution and scope, the accuracy achievable was enhanced to 99.02% agaist a validation subset and 99.14% with the model refit and scored against the test set.
+              By applying an ensemble method ([extreme gradient boosting](https://en.wikipedia.org/wiki/XGBoost)) and harnessing the power of it's distribution and scope, the accuracy achievable was enhanced to 99.22% agaist a validation subset and 99.26% with the model refit and scored against the test set.
             """
         ),
 

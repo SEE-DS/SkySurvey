@@ -28,7 +28,7 @@ column1 = dbc.Col(
             
             Shown here are radiant space objects, representing three types.
             
-            The color and the z-axis represent each objects' [__redshift__](https://en.wikipedia.org/wiki/Redshift#Observations_in_astronomy).
+            The color and the z-axis represent each objects' [**__redshift__**](https://en.wikipedia.org/wiki/Redshift#Observations_in_astronomy).
             
             """
         ),

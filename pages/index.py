@@ -113,7 +113,7 @@ scatter.update_layout(title_text="",
 #                            z=1
 #                        ),
                         eye=dict(
-                            z=.5
+                            z=-1
                         ),
                       ),
                       xaxis=dict(

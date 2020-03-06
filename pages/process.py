@@ -43,9 +43,7 @@ column2 = dbc.Col(
                  
                This difficulty gave me a clearer picture of the nature of classification, especially in terms of multi-class classification in the case of imbalanced classes.
                  
-               The pie chart shown here displays the proportion of each class, as well as displaying the naive majority baseline upon hovering over the chart sections. (A 'naive majority baseline' accuracy is a measure of how accurate we would be if we guessed that every object belonged only to the class in question.) 
-                 
-               The rarer class (quasars) is easiest to differentiate, while the most common (galaxies) is the most difficult.             
+               The pie chart shown here displays the proportion of each class, as well as displaying the naive majority baseline upon hovering over the chart sections. (A 'naive majority baseline' accuracy is a measure of how accurate we would be if we guessed that every object belonged only to the class in question.)            
             """
         )
     ],

@@ -37,7 +37,9 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
             the x and y planes represent astronomical coordinates right ascension and declination, respectively. 
-            [see animation for a visual explanation]
+            
+            
+            (see animation for a visual explanation)
             """
         ),
         html.Img(src='assets/Ra_and_dec_demo_animation_small.gif', className='img-fluid')       

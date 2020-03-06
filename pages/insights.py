@@ -52,7 +52,7 @@ column2 = dbc.Col(
             
             ****
             
-            #### __This set of partial dependence interaction plots to the left has been assembled from the series of [photometric magnitudes](https://en.wikipedia.org/wiki/Photometry_(astronomy)#Magnitudes_and_colour_indices), from shorter wavelengths (u for ultraviolet) to longest (i is infrared).__
+            #### __This set of partial dependence interaction plots to the left has been assembled from the series of [photometric magnitudes](https://en.wikipedia.org/wiki/Photometry_(astronomy)#Magnitudes_and_colour_indices), from shorter wavelengths (u for ultraviolet) to longest (i is infrared) compared against their interaction with the 'redshift' feature.__
             """)    
     ],
     md=6

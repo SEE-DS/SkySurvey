@@ -23,7 +23,7 @@ column1 = dbc.Col(
             
             When combined with an appreciation that our ability to capture higher redshift has grown over time, it paints a picture of the gradual uncovering of phenomena that are still not widely understood and appreciated. 
             """),
-         html.Img(src='assets/galaxy ugriz v redshift.png'),       
+         html.Img(src='assets/galaxy ugriz v redshift.png', className='img-fluid'),       
     ],
     md=3
 )
@@ -66,7 +66,8 @@ column3 = dbc.Col(
               By applying an ensemble method ([extreme gradient boosting](https://en.wikipedia.org/wiki/XGBoost)) and harnessing the power of it's distribution and scope, the accuracy achievable was enhanced to 99.22% agaist a validation subset and 99.26% with the model refit and scored against the test set.
             """
         ),
-
+        html.Img(src='assets/the higher the redshift, the less likely an object is a galaxy.png', className='img-fluid'),  
+        dcc.Markdown("""(As seen above, the higher the redshift, the less likely an object is a galaxy)"""),
     ],
 )
 

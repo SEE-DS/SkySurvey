@@ -26,9 +26,21 @@ column1 = dbc.Col(
 
             How can we identify one tiny dot within the vastness of space?
             
+            Shown here are radiant space objects, representing three types.
+            
+            The color and the z-axis represent each objects' __redshift__.
+            
             """
         ),
         #dcc.Link(dbc.Button('What is it?', color='secondary'), href='/predictions')
+           
+        dcc.Markdown(
+            """
+            the x and y planes represent astronomical coordinates right ascension and declination, respectively. 
+            [see animation for a visual explanation]
+            """
+        ),
+        html.Img(src='assets/Ra_and_dec_demo_animation_small.gif', className='img-fluid')       
     ],
     md=5
 )
@@ -138,13 +150,7 @@ scatter.add_layout_image(
 
 column2 = dbc.Col(
     [
-        dcc.Graph(figure=scatter),      
-        dcc.Markdown(
-            """
-            the x and y planes represent astronomical coordinates right ascension and declination, respectively. 
-            """
-        ),
-        html.Img(src='assets/Ra_and_dec_demo_animation_small.gif', className='img-fluid')        
+        dcc.Graph(figure=scatter),         
     ]
 )
 

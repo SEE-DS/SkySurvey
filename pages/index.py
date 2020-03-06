@@ -30,7 +30,7 @@ column1 = dbc.Col(
         ),
         #dcc.Link(dbc.Button('What is it?', color='secondary'), href='/predictions')
     ],
-    md=3
+    md=5
 )
 
 df = pd.read_csv('assets/Skyserver_12_30_2019 4_49_58 PM.csv')
@@ -138,13 +138,13 @@ scatter.add_layout_image(
 
 column2 = dbc.Col(
     [
-        dcc.Graph(figure=scatter),
-        html.Img(src='Ra_and_dec_demo_animation_small.gif', className='img-fluid'),        
+        dcc.Graph(figure=scatter),      
         dcc.Markdown(
             """
             the x and y planes represent astronomical coordinates right ascension and declination, respectively. 
             """
-        )
+        ),
+        html.Img(src='assets/Ra_and_dec_demo_animation_small.gif', className='img-fluid')        
     ]
 )
 

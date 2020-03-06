@@ -30,9 +30,9 @@ column2 = dbc.Col(
     [
         dcc.Markdown(
             """
-            Based on all the feature-importance evidence between classes and individual predictions, redshift is far and away the most predictive feature of any given observation. 
+            Based on all the feature-importance evidence between classes and individual predictions, **redshift** is far and away the most predictive feature of any given observation. 
             
-            The Shapley value force plot for the prediction that the object observed below is a galaxy shows that other factors may come into play as well, demonstrating that estimating the significance of a feature in terms of an entire dataset (the importance of redshift) doesn't necessarily reflect the weight of it's impact on individual predictions. 
+            The Shapley value force plot for the prediction that the object observed below is a galaxy shows that __other factors may come into play as well__, demonstrating that estimating the significance of a feature in terms of an entire dataset (the importance of redshift) doesn't necessarily reflect the weight of it's impact on individual predictions. 
             """
         ),
         html.Img(src='assets/galaxy true.png', className='img-fluid'),
@@ -42,6 +42,9 @@ column2 = dbc.Col(
             ## Further Exploration!
             With such a clear distinction between these classes, I would be interested to explore the task of differentiating between the tougher cases, and could imagine subsetting the data to classify only those cases that are more ambiguous, in order to bring more to light the other factors that enter into the differentiation between stars, galaxies, and quasi-stellar objects (who often are surrounded by galaxies that are hard to make out against the glare of QSOs)
             """),
+        html.Img(src='assets/galaxy xgb eli5 permutation importance.png'),
+        html.Img(src='assets/galaxy confusion matrix.png'),
+        html.Img(src='assets/galaxy ugriz v redshift'),
     ],
     md=6
 )

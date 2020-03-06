@@ -109,11 +109,11 @@ scatter.update_layout(title_text="",
                   scene=dict(
                       bgcolor='rgba(0,0,0,0)',
                       camera=dict(
-#                        center=dict(
-#                            z=1
-#                        ),
+                        center=dict(
+                            z=-2
+                        ),
                         eye=dict(
-                            z=-3
+                            z=-1
                         ),
                       ),
                       xaxis=dict(

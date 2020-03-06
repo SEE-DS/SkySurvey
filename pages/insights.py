@@ -44,6 +44,10 @@ column2 = dbc.Col(
             With such a clear distinction between these classes, I would be interested to explore the task of differentiating between the tougher cases, and could imagine subsetting the data to classify only those cases that are more ambiguous, in order to bring more to light the other factors that enter into the differentiation between stars, galaxies, and quasi-stellar objects (who often are surrounded by galaxies that are hard to make out against the glare of QSOs)
             """),
         html.Img(src='assets/galaxy confusion matrix.png'),
+        html.Img(src='assets/the higher the redshift, the less likely an object is a galaxy.png', className='img-fluid'),  
+        dcc.Markdown("""(As seen above, the higher the redshift, the less likely an object is a galaxy)
+        
+        """),        
     ],
     md=6
 )
@@ -65,10 +69,6 @@ column3 = dbc.Col(
               By applying an ensemble method ([extreme gradient boosting](https://en.wikipedia.org/wiki/XGBoost)) and harnessing the power of it's distribution and scope, the accuracy achievable was enhanced to 99.22% agaist a validation subset and 99.26% with the model refit and scored against the test set.
             """
         ),
-        html.Img(src='assets/the higher the redshift, the less likely an object is a galaxy.png', className='img-fluid'),  
-        dcc.Markdown("""(As seen above, the higher the redshift, the less likely an object is a galaxy)
-        
-        """),
         html.Img(src='assets/galaxy xgb eli5 permutation importance.png'),        
     ],
 )

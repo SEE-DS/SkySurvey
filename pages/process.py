@@ -49,7 +49,7 @@ column2 = dbc.Col(
             """
         )
     ],
-    md=6,
+    md=5,
 )
 
 df = pd.read_csv('assets/Skyserver_12_30_2019 4_49_58 PM.csv')
@@ -97,7 +97,7 @@ column3 = dbc.Col(
             """
         )
     ],
-    md=4
+    md=7
 )
 
 layout = dbc.Row([column1, column2, column3])

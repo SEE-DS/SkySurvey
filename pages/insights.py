@@ -18,7 +18,9 @@ column1 = dbc.Col(
             ## But what about the modeling???
             
             The efforts to effectively classify these objects may not be groundbreaking science, but they can be valuable and informative. 
+            
             In my estimation, going through the process to differentiate these objects from one another with the photometric data available is a great way to reverse-engineer the procedures undertaken that resulted in the discovery, defining, and study of quasi-stellar objects. 
+            
             When combined with an appreciation that our ability to capture higher redshift has grown over time, it paints a picture of the gradual uncovering of phenomena that are still not widely understood and appreciated. 
             """),
     ],

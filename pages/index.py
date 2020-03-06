@@ -34,6 +34,7 @@ column1 = dbc.Col(
 )
 
 df = pd.read_csv('assets/Skyserver_12_30_2019 4_49_58 PM.csv')
+df_alpha = df.copy()
 df['galaxy']=df['class']=='GALAXY'
 df['star'] = df['class']=='STAR'
 df['quasar'] = df['class']=='QSO'
@@ -49,12 +50,13 @@ pie = px.pie(data_frame=class_distribution, values='class', names='index',
              title='Sky Object Classification Distribution',
              hover_data=['naivebaseline'], 
              labels={'index':'object',
-                     'naivebaseline':'naive class baseline'}
+                     'naivebaseline':'naive class baseline'},
+             width=500
 )
-fig.update_traces(hoverinfo='value', textinfo='label+percent', textfont_size=20,
-                  marker=dict(colors=colors, line=dict(color='#000000', width=2,)))
+pie.update_traces(hoverinfo='value', textinfo='label+percent', textfont_size=20,
+                  marker=dict(colors=colors, line=dict(color='#000000', width=2)))
 
-3d = (px.scatter_3d(df, 
+scatter = (px.scatter_3d(df, 
                     x='ra', 
                     y='dec', 
                     z='redshift', 
@@ -64,7 +66,8 @@ fig.update_traces(hoverinfo='value', textinfo='label+percent', textfont_size=20,
                     symbol_sequence=['square', 'circle', 'x'],
                     width=825,
                     height=900))
-fig.update_traces(marker=dict(size=5,
+
+scatter.update_traces(marker=dict(size=5,
                               line=dict(width=0)),
                   selector=dict(mode='markers'),
                   showlegend=True)
@@ -72,17 +75,17 @@ fig.update_traces(marker=dict(size=5,
 img_width=1600
 img_height=1200
 
-fig.update_xaxes(showgrid=False,
+scatter.update_xaxes(showgrid=False,
         visible=False,
         range=[0, img_height],
         scaleanchor='x'
         )
-fig.update_yaxes(showgrid=False,
+scatter.update_yaxes(showgrid=False,
         visible=False,
         range=[0, img_height],
         scaleanchor='x'
         )
-fig.update_layout(title_text="",
+scatter.update_layout(title_text="",
                   title_font_size=30,
                   legend=dict(
                       bgcolor='yellow',
@@ -132,7 +135,7 @@ fig.update_layout(title_text="",
                           )
                       )
                   )
-fig.add_layout_image(
+scatter.add_layout_image(
         dict(
             source='https://raw.githubusercontent.com/arewelearningyet/dashtemplate/master/assets/fieldvoorwerp-big.jpg',
             x=0,
@@ -156,9 +159,8 @@ fig.add_layout_image(
 
 column2 = dbc.Col(
     [
-        
-        dcc.Graph(figure=pie
-        dcc.Graph(figure=3d),
+        dcc.Graph(figure=pie),
+        dcc.Graph(figure=scatter),
     ]
 )
 

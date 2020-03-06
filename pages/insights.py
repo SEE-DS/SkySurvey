@@ -28,12 +28,15 @@ column1 = dbc.Col(
             """ 
             ### No seriously, your grade depends on modeling and evaluation.
             
-                Well, if you must know...
+              Well, if you must know...
                 
-                A baseline score for predicting quasars was 89.42%, and even a simple linear model achieved 99% accuracy.
-                The baseline score for predicting galaxies however, is 48.35%... a much more interesting problem.
-                Using a simple logistic regression, classification accuracy for predicting galaxies was 90.76% accurate against the validation subset. 
-                By applying an ensemble method and harnessing the power of it's distribution and scope, the accuracy achievable was enhanced to 99.02% agaist a validation subset and 99.14% with the model refit and scored against the test set.
+              A baseline score for predicting quasars was 89.42%, and even a simple linear model achieved 99% accuracy.
+            
+              The baseline score for predicting galaxies however, is 48.35%... a much more interesting problem.
+            
+              Using a simple logistic regression, classification accuracy for predicting galaxies was 90.76% accurate against the validation subset. 
+            
+              By applying an ensemble method and harnessing the power of it's distribution and scope, the accuracy achievable was enhanced to 99.02% agaist a validation subset and 99.14% with the model refit and scored against the test set.
             """
         ),
 

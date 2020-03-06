@@ -108,6 +108,14 @@ scatter.update_layout(title_text="",
                   plot_bgcolor='rgba(0,0,0,0)',
                   scene=dict(
                       bgcolor='rgba(0,0,0,0)',
+                      camera=dict(
+                        center=dict(
+                            z=2
+                        ),
+                        eye=dict(
+                            z=.5
+                        ),
+                      ),
                       xaxis=dict(
                           visible=False,
                           showbackground=False,

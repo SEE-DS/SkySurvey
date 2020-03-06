@@ -23,10 +23,15 @@ column1 = dbc.Col(
                There are 10,000 observations in the dataset used in this exploration.
                  
                Most of the features are photometric information, mostly broken up or 'binned' into wavelengths of light or radiation.
-            
-            
-            ( [The Sloan Digital Sky Survey or SDSS is a major multi-spectral imaging and spectroscopic redshift survey using a dedicated 2.5-m wide-angle optical telescope at Apache Point Observatory in New Mexico, United States. -Wikipedia](https://en.wikipedia.org/wiki/Sloan_Digital_Sky_Survey) )
-            
+            """
+        )
+    ],
+    md=12
+)
+column2 = dbc.Col(
+    [
+        dcc.Markdown(
+            """
             ## The Target
                  
                Of the available features of these observations, one is a clear target for classification:
@@ -85,7 +90,12 @@ pie.update_traces(hoverinfo='value', textinfo='label+percent', textfont_size=20,
 
 column2 = dbc.Col(
     [
+        dcc.Markdown("""
+            ( [The Sloan Digital Sky Survey or SDSS is a major multi-spectral imaging and spectroscopic redshift survey using a dedicated 2.5-m wide-angle optical telescope at Apache Point Observatory in New Mexico, United States. -Wikipedia](https://en.wikipedia.org/wiki/Sloan_Digital_Sky_Survey) )
+            """),
+        
         dcc.Graph(figure=pie),
+        
         dcc.Markdown(
             """
                         

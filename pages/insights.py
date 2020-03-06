@@ -30,7 +30,8 @@ column1 = dbc.Col(
 column2 = dbc.Col(
     [
         
-        html.Img(src='assets/galaxy confusion matrix.png', className='img-fluid'),
+        html.Img(src='assets/the higher the redshift, the less likely an object is a galaxy.png', className='img-fluid'),  
+        dcc.Markdown("""(As seen above, the higher the redshift, the less likely an object is a galaxy)"""),
         dcc.Markdown(
             """
             Based on all the feature-importance evidence between classes and individual predictions, **redshift** is far and away the most predictive feature of any given observation. 
@@ -43,12 +44,8 @@ column2 = dbc.Col(
         html.Img(src='assets/quasar true.png', className='img-fluid'),
         dcc.Markdown("""
             ## Further Exploration!
-            With such a clear distinction between these classes, I would be interested to explore the task of differentiating between the tougher cases, and could imagine subsetting the data to classify only those cases that are more ambiguous, in order to bring more to light the other factors that enter into the differentiation between stars, galaxies, and quasi-stellar objects (who often are surrounded by galaxies that are hard to make out against the glare of QSOs)
-            """),
-        html.Img(src='assets/the higher the redshift, the less likely an object is a galaxy.png', className='img-fluid'),  
-        dcc.Markdown("""(As seen above, the higher the redshift, the less likely an object is a galaxy)
-        
-        """),        
+            With such a clear distinction between these classes, I would be interested to explore the task of differentiating between the tougher cases, and could imagine subsetting the data to classify only those cases that are more ambiguous, in order to bring more to light the other factors that enter into the differentiation between stars, galaxies, and quasi-stellar objects (who often are surrounded by galaxies that are hard to make out against the glare of QSOs)"""),
+       html.Img(src='assets/galaxy confusion matrix.png', className='img-fluid'),        
     ],
     md=6
 )

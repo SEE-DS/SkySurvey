@@ -44,7 +44,7 @@ column1 = dbc.Col(
         ),
         html.Img(src='assets/Ra_and_dec_demo_animation_small.gif', className='img-fluid')       
     ],
-    md=4
+    md=4.5
 )
 
 df = pd.read_csv('assets/Skyserver_12_30_2019 4_49_58 PM.csv')
@@ -154,7 +154,7 @@ column2 = dbc.Col(
     [
         dcc.Graph(figure=scatter),         
     ],
-    md=8
+    md=7.5
 )
 
 layout = dbc.Row([column1, column2])

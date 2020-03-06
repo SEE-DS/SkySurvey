@@ -47,7 +47,9 @@ column2 = dbc.Col(
             
             With such a clear distinction between these classes, I would be interested to explore the task of differentiating between the tougher cases, and could imagine subsetting the data to classify only those cases that are more ambiguous, in order to bring more to light the other factors that enter into the differentiation between stars, galaxies, and quasi-stellar objects (who often are surrounded by galaxies that are hard to make out against the glare of QSOs)
             
-            This set of partial dependence interaction plots to the left has been assembled from the series of [photometric magnitudes](https://en.wikipedia.org/wiki/Photometry_(astronomy)#Magnitudes_and_colour_indices), from shorter wavelengths (u for ultraviolet) to longest (i is infrared).
+            
+            
+            #### This set of partial dependence interaction plots to the left has been assembled from the series of [photometric magnitudes](https://en.wikipedia.org/wiki/Photometry_(astronomy)#Magnitudes_and_colour_indices), from shorter wavelengths (u for ultraviolet) to longest (i is infrared).
             """)    
     ],
     md=6

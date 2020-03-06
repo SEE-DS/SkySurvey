@@ -22,7 +22,7 @@ column1 = dbc.Col(
             When combined with an appreciation that our ability to capture higher redshift has grown over time, it paints a picture of the gradual uncovering of phenomena that are still not widely understood and appreciated. 
             """),
     ],
-    md=2
+    md=3
 )
 column2 = dbc.Col(
     [
@@ -35,7 +35,7 @@ column2 = dbc.Col(
         html.Img(src='assets/star true.png', className='img-fluid'),
         html.Img(src='assets/quasar true.png', className='img-fluid'),
     ],
-    md=8
+    md=6
 )
 column3 = dbc.Col(
     

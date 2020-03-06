@@ -47,7 +47,7 @@ naive = [('{0:.2f}%'.format(df.galaxy.value_counts(normalize=True)[0]*100)),
 class_distribution['naivebaseline'] = naive
 class_distribution['class'] = pd.Series(['{0:.2f}%'.format(val*100) for val in class_distribution['class']], index=class_distribution.index)
 colors = ['gold', 'mediumturquoise', 'darkorange']
-fig = px.pie(class_distribution, values='class', names='index',
+fig = px.pie(data_frame=class_distribution, values='class', names='index',
              title='Sky Object Classification Distribution',
              hover_data=['naivebaseline'], labels={'index':'object',
                                                    'naivebaseline':'naive class baseline'})

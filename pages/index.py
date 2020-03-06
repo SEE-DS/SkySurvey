@@ -117,7 +117,7 @@ scatter.update_layout(title_text="",
                         center=dict(
                             z=-.20,
                             y=.05,
-                            x=.05
+                            x=.5
                         ),
                         eye=dict(
                             z=-0.5
